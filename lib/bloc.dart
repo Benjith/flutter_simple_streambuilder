@@ -7,9 +7,9 @@ import 'package:zoondia_test/model.dart';
 
 class Block {
   final _allItems = PublishSubject();
-  StreamController _someController;
-  Stream foo;
-
+  Block() {
+    fetchAllItems();
+  }
   var url =
       'https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1';
   Stream get itemsStream => _allItems.stream;
